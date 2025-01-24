@@ -1,0 +1,256 @@
+:root {
+    --azul1: #2D4B73;
+    --azul2: #253C59;
+    --azul3: #99B4BF;
+    --amarillo: #D9B70D;
+    --ocre: #BFB030;
+    --blanco: #ffffff;
+    --negro: #000000;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--negro);
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--azul1);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.menu-principal ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.menu-principal a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.menu-principal a:hover {
+    color: var(--amarillo);
+}
+
+.submenu {
+    position: relative;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--azul2);
+    padding: 1rem;
+    min-width: 200px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.submenu:hover .dropdown {
+    display: block;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(45,75,115,0.8), rgba(45,75,115,0.8)),
+                url('../img/hero-bg.jpg') center/cover;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    color: var(--blanco);
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Botones CTA */
+.boton-cta {
+    display: inline-block;
+    background-color: var(--amarillo);
+    color: var(--negro);
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.boton-cta:hover {
+    background-color: var(--ocre);
+}
+
+/* Sección Copilot */
+.copilot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 2rem;
+    background: var(--azul3);
+}
+
+.texto-copilot {
+    flex: 1;
+    margin-right: 2rem;
+}
+
+.texto-copilot h2 {
+    color: var(--azul1);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.texto-copilot p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.imagen-copilot img {
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Newsletter */
+.newsletter {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: var(--blanco);
+}
+
+.newsletter h3 {
+    font-size: 1.8rem;
+    color: var(--azul1);
+    margin-bottom: 1rem;
+}
+
+.newsletter p {
+    margin-bottom: 2rem;
+    color: var(--azul2);
+}
+
+/* Footer */
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--azul2);
+    color: var(--blanco);
+    padding: 3rem 2rem;
+    gap: 2rem;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+    padding: 1rem;
+}
+
+.footer-col h4 {
+    color: var(--amarillo);
+    margin-bottom: 1.5rem;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-col a {
+    color: var(--blanco);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover {
+    color: var(--amarillo);
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.redes-sociales img {
+    width: 30px;
+    transition: transform 0.3s;
+}
+
+.redes-sociales img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .menu-principal ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .hero {
+        min-height: 50vh;
+        text-align: center;
+    }
+    
+    .copilot {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .texto-copilot {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+    
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .redes-sociales {
+        justify-content: center;
+    }
+} 
